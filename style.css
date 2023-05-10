@@ -32,10 +32,6 @@ nav {
     transition: .3s;
 }
 
-.dorpdown {
-    display: none;
-}
-
 span {
     color: lawngreen;
     font-weight: bolder;
@@ -48,6 +44,7 @@ nav ul li {
 }
  
 nav ul li a {
+    /* display: none; */
     padding: 20px 0px;
     text-decoration: none;
     color: #262d3b;
@@ -56,11 +53,18 @@ nav ul li a {
     border-bottom: 2px;
 }
 
-nav ul li a:hover {
+nav ul li a:hover:not(:nth-child(6)) {
     transform: scale(1.1);
     border-bottom: 3px solid lawngreen;
     padding-bottom: 5px;
     transition: .3s;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 15px 15px;
+}
+
+ul.navbar li.dropdownIcon {
+    display: none;
 }
 
 .btn {
@@ -110,10 +114,48 @@ nav ul li a:hover {
 
 
 
+
+
 /* Responsive Styling */
 @media screen and (max-width:990px) {
 
+    ul.navbar li:not(:nth-child(6)), .btn {
+        display: none;
+    }
 
+    ul.navbar li.dropdownIcon {
+        display: block;
+        font-size: 35px;
+        float: right;
+    }
+
+    ul.navbar.responsive li.dropdownIcon {
+        position: absolute;
+        top: 0; right: 0;
+    }
+
+    nav {
+        padding: 10px 15px;
+    }
+    ul.navbar.responsive {
+        position: relative;
+        background: rgba(255, 255, 255, 0.2);
+        width: 100vw;
+        
+    }
+
+    ul.navbar.responsive li {
+        display: inline;
+        float: none;
+    }
+
+    ul.navbar.responsive li a {
+        display: block;
+        color: blue;
+        /* color: hsl(197, 71%, 70%); */
+        /* background: rgba(255, 255, 255, 0.5); */
+        /* pointer-events: none; */
+    }
 
 
 
